@@ -1,10 +1,29 @@
 ，按 Ctrl+C 解除封印，然后terminal输入。
-
+touch /tmp/keepalive
 cd openwrt && make menuconfig
 make V=99
 make V=99 2>&1 | tee build.log | grep -i error
+打开http://github.com，登录账户，左上角的搜索框里输入ATMaterial，点击搜索。
 
+然后在openwrt-ci.yml中的sudo -E apt-get clean后面再加一组workflow
+
+把复制的链接前面加git clone，按照如下格式写好。
+- name: 涡轮增雕进程
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
+然后在下面备注为主题的代码处进行修改，
+
+添加CONFIG_PACKAGE_luci-theme-atmaterial=y，如下。
+ # LuCI主题:
+          cat >> .config <<EOF
+          CONFIG_PACKAGE_luci-theme-argon=y
+          CONFIG_PACKAGE_luci-theme-atmaterial=y
+          EOF
 https://www.right.com.cn/forum/thread-344825-1-1.html
+
 不要更改名字，直接下一步下一步。最后 < Exit > 退出。退回到这个界面之后，按 Ctrl+D 退出终端。
 选择LuCI 配置 添加插件应用：常用
 -----------------------------------------------------------------------------------------
