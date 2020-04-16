@@ -1,6 +1,7 @@
 ，按 Ctrl+C 解除封印，然后terminal输入。
 
 cd openwrt && make menuconfig
+make V=99
 https://www.right.com.cn/forum/thread-344825-1-1.html
 不要更改名字，直接下一步下一步。最后 < Exit > 退出。退回到这个界面之后，按 Ctrl+D 退出终端。
 选择LuCI 配置 添加插件应用：常用
