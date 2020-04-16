@@ -2,7 +2,7 @@
 touch /tmp/keepalive
 cd openwrt && make menuconfig
 make V=99
-make -j 3 V=99 2>&1 | tee build.log | grep -i error
+make -j3 V=99 2>&1 | tee build.log | grep -i error
 打开http://github.com，登录账户，左上角的搜索框里输入ATMaterial，点击搜索。
 
 然后在openwrt-ci.yml中的sudo -E apt-get clean后面再加一组workflow
