@@ -1,4 +1,8 @@
+多线程的话，要出错都是集中在tools部分，
+先make tools，然后再make -j cpu数+1～2就没问题了V=99没必要用，多线程跑，跑到后面如果出错了 就make 一下出错的，把出错部分单独编过去，然后继续多线程。如果单线程都不过，可以make 出错的部分/clean 再试，如果再不行再V=99。
 ，按 Ctrl+C 解除封印，然后terminal输入。
+make V=99 -j 5
+
 touch /tmp/keepalive
 cd openwrt && make menuconfig
 make V=99
