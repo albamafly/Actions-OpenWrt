@@ -6,4 +6,4 @@
 # Blog: https://p3terx.com
 #=================================================
 # Modify default IP
-sed -i 's/192.168.0.1/192.168.0.200/g' package/base-files/files/bin/config_generate
+sed -i 's/172.168.0.1/172.168.0.200/g' package/base-files/files/bin/config_generate
